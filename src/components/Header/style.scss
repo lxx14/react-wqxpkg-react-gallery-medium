@@ -1,0 +1,15 @@
+ul {
+  display: flex;
+  text-transform: uppercase;
+  margin-top: 15px;
+  background-color: rgb(207, 207, 207);
+  width: 100%;
+  a {
+    padding: 10px 15px;
+    display: block;
+    color: black;
+    &:hover, &.active {
+      background-color: rgb(145, 145, 145);
+    }
+  }
+}
