@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addImageAction } from './actions';
 
 const Gallery = (props) => {
   const list = props.photos.map(item=><li key={item.id}>{item.name}</li>);
@@ -26,10 +27,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    addImage: (data) => dispatch({
-    type: "ADD_IMAGE",
-    data
-    })
+    addImage: (data) => dispatch(addImageAction(data))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Gallery);
