@@ -1,9 +1,11 @@
 import { getPhotos } from './service';
 
-export const addImageActionType = (data) => ({
-  type: 'ADD_IMAGE',
-  data
-});
+export const addImageActionType = (data) => ({type: 'ADD_IMAGE', data});
+
+export const startFetchPhotosActionType = (data) => ({ type: 'START_FETCH_PHOTOS' });  //при начале загрузки фото например выводить значок загрузки или затемнять экран или еще что
+export const successFetchPhotosActionType = (data) => ({ type: 'START_FETCH_PHOTOS', images }); //при успехе - загружать фотки в редакс
+export const failFetchPhotosActionType = (data) => ({ type: 'FAIL_FETCH_PHOTOS' });  //обработка фетча с ошибкой
+
 
 
 export const fetchImagesAction = (dispatch) => {
@@ -15,5 +17,3 @@ export const fetchImagesAction = (dispatch) => {
 
   getPhotos(3, 25).then(images => console.log(images))
 };
-
-export const startFetchPhotosActionType = (data) => ({ type: 'START_FETCH-PHOTOS' });
