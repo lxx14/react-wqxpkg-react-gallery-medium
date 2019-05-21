@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addImageActionType, fetchImagesAction } from './actions';
+import { addImageActionType, fetchImagesAction } from './actions';  //импортируем ВСЕ экшны, которые нам понадобятся в компоненте
 
 class Gallery extends Component {
   componentDidMount() {
-    this.props.fetchImages();
+    this.props.fetchImages(); // подгружаем фотки из мапДиспатчТуПропс
   }
 
   render() {
@@ -33,9 +33,9 @@ const mapStateToProps = (state) => ({
   photos: state.gallery.photos
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  addImage: (image) => dispatch(addImageActionType(image)),
-  fetchImages: () => fetchImagesAction(dispatch)
-})
+const mapDispatchToProps = {
+  addImage: addImageActionType,
+  fetchImages: fetchImagesAction
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Gallery);
