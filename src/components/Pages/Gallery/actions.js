@@ -9,7 +9,8 @@ export const successFetchPhotosActionType = (images) => ({ type: 'SUCCESS_FETCH_
 
 
 
-export const fetchImagesAction = () => (dispatch) => {
+export const fetchImagesAction = () => (dispatch) => { // объединяем экшны, которые нам надо делать асинхронно в один и в нем запускаем наши экшн тайпы, которые мы создали выше
+
   dispatch(startFetchPhotosActionType()) //перед загрузкой фоток вызываем анимацию загрузки
 
   /**
